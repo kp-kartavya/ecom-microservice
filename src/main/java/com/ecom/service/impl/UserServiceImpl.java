@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ecom.entity.User;
 import com.ecom.exception.ResourceNotFoundException;
+import com.ecom.exception.UsernameAlreadyExistsException;
 import com.ecom.repo.UserRepo;
 import com.ecom.service.UserService;
 
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User addUser(User user) {
 		if (userRepo.existsByUsername(user.getUsername())) {
-			return user;
+			throw new UsernameAlreadyExistsException("User", "username", user.getUsername());
 		}
 		User newUser = userRepo.save(user);
 		return newUser;

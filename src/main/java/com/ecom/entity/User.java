@@ -1,5 +1,7 @@
 package com.ecom.entity;
 
+import com.ecom.dto.UserRole;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,4 +25,7 @@ public class User {
 	private String username;
 	private String firstname;
 	private String lastname;
+	private String email;
+	private String phone;
+	private UserRole role = UserRole.CUSTOMER;
 }
