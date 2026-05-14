@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: user-microservice
+  mongodb:
+    uri: mongodb://localhost:27020/userDB
+    # uri: mongodb+srv://root:root@user-data.j9rtmtn.mongodb.net/?appName=user-data
+    # database: ${MONGODB_DATABASE:userDB}
+
+server.port: ${SERVER_PORT:8080}
+
+logging:
+  pattern:
+    console: ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}
+
+springdoc:
+  api-docs:
+    enabled: true
+    version: openapi-3-0
+  swagger-ui:
+    enabled: true
