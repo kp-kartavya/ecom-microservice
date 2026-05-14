@@ -2,7 +2,7 @@ spring:
   application:
     name: user-microservice
   mongodb:
-    uri: mongodb://localhost:27017/userDB
+    uri: mongodb://localhost:27020/userDB
     # uri: mongodb+srv://root:root@user-data.j9rtmtn.mongodb.net/?appName=user-data
     # database: ${MONGODB_DATABASE:userDB}
 
