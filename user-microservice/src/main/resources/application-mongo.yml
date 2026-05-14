@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: user-microservice
+  mongodb:
+    uri: mongodb://localhost:27020/userDB
+#  config:
+#    import: optional:configserver:http://localhost:8888
