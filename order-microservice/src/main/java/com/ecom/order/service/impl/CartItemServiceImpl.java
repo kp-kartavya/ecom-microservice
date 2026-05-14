@@ -6,6 +6,7 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ecom.order.dto.CartItemDto;
 import com.ecom.order.entity.CartItem;
@@ -13,7 +14,6 @@ import com.ecom.order.repository.CartItemRepo;
 import com.ecom.order.request.CartItemRequest;
 import com.ecom.order.service.CartItemService;
 
-import jakarta.transaction.Transactional;
 
 @Service
 @Transactional
@@ -56,7 +56,7 @@ public class CartItemServiceImpl implements CartItemService {
 	}
 
 	@Override
-	public boolean deleteCartItem(String userId, Long productId) {
+	public boolean deleteCartItem(String userId, String productId) {
 //		User user = userRepo.findById(userId)
 //				.orElseThrow(() -> new ResourceNotFoundException("User", "id", userId.toString()));
 //

@@ -36,7 +36,7 @@ public class CartItemController {
 
 	@DeleteMapping("/delete")
 	public ResponseEntity<String> deleteCartItem(@RequestHeader("X-User-Id") String userId,
-			@RequestParam Long productId) {
+			@RequestParam String productId) {
 		boolean result = cartItemService.deleteCartItem(userId, productId);
 		return !result ? ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cart item not found for user and product")
 				: ResponseEntity.status(HttpStatus.OK).body("Cart item deleted successfully");

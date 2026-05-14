@@ -9,7 +9,7 @@ public interface CartItemService {
 
 	CartItemDto addToCart(String userId, CartItemRequest cartItemRequest);
 
-	boolean deleteCartItem(String userId, Long productId);
+	boolean deleteCartItem(String userId, String productId);
 
 	List<CartItemDto> getCartItems(String userId);
 

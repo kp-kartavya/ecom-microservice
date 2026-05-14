@@ -49,12 +49,12 @@ public class OrderServiceImpl implements OrderService {
 		order.setStatus(OrderStatus.CONFIRMED);
 
 		List<OrderItem> orderItems = cartItems.stream()
-				.map(item -> new OrderItem(null, item.getProductId(), item.getQuantity(), item.getPrice(), order))
+				.map(item -> new OrderItem(item.getId(), item.getProductId(), item.getQuantity(), item.getPrice()))
 				.collect(Collectors.toList());
 
 		order.setOrderItems(orderItems);
 		Order savedOrder = orderRepo.save(order);
-		
+
 		cartItemService.clearCart(userId);
 		OrderDto orderDto = modelMapper.map(savedOrder, OrderDto.class);
 		return orderDto;

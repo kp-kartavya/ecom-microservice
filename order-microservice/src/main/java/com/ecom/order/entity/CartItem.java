@@ -3,13 +3,11 @@ package com.ecom.order.entity;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,18 +17,16 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "cart_item")
+@Document(collection = "cart_items")
 public class CartItem {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private Long productId;
+	private String id;
+	private String productId;
 	private String userId;
 	private Integer quantity;
 	private BigDecimal price;
-	@CreationTimestamp
+	@CreatedDate
 	private LocalDateTime createdAt;
-	@UpdateTimestamp
+	@LastModifiedDate
 	private LocalDateTime updatedAt;
 }

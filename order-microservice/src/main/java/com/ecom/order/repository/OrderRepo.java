@@ -1,9 +1,10 @@
 package com.ecom.order.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.ecom.order.entity.Order;
 
-public interface OrderRepo extends JpaRepository<Order, Long>{
+public interface OrderRepo extends MongoRepository<Order, String>{
 
 }

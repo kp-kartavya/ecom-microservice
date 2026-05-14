@@ -13,11 +13,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CartItemDto {
-	private Long id;
+	private String id;
 	private Integer quantity;
 	private BigDecimal price;
 	private String userId;
-	private Long productId;
+	private String productId;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
 }
