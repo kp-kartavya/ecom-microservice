@@ -33,8 +33,8 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public ProductDto updateProduct(Long id, ProductDto productDto) {
-		Product existingProduct = productRepo.findById(id)
+	public ProductDto updateProduct(String id, ProductDto productDto) {
+		Product existingProduct = productRepo.findById(id.toString())
 				.orElseThrow(() -> new ResourceNotFoundException("Product", "id", String.valueOf(id)));
 
 		existingProduct.setName(productDto.getName());
@@ -50,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public void deleteProduct(Long id) {
+	public void deleteProduct(String id) {
 		if (!productRepo.existsById(id)) {
 			throw new ResourceNotFoundException("Product", "id", String.valueOf(id));
 		}

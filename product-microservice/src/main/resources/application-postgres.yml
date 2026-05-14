@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: product-microservice
+  datasource:
+        url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:productDB}?currentSchema=public&serverTimezone=Asia/Kolkata
+    #   url: jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:3306}/${DATABASE_NAME:ecomDB}
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+        username: root
+        password: root
+  jpa:
+      database: POSTGRESQL
+      show-sql: ${JPA_SHOW_SQL:true}
+      hibernate:
+        ddl-auto: update
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      properties:
+        hibernate:
+          format-sql: ${HIBERNATE_FORMAT_SQL:true}
+
+server.port: ${SERVER_PORT:8081}
+
+logging:
+  pattern:
+    console: ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}
