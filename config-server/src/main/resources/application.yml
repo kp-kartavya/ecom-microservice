@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kp-kartavya/ecom-microservice.git
+          default-label: main
+          search-paths: application-config
+
+server:
+  port: 8888
