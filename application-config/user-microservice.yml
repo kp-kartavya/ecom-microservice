@@ -18,3 +18,6 @@ springdoc:
     version: openapi-3-0
   swagger-ui:
     enabled: true
+
+app:
+  message: This is User Microservice
