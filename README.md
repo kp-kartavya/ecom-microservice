@@ -28,3 +28,4 @@ What the above commands respectively:
 - list all the docker containers running.
 
 Other than this previously I used PostgreSQL & pgadmin4. You can use docker compose up.
+other-files has some useful files like sql scripts etc.
