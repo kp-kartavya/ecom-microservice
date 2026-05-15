@@ -11,13 +11,13 @@ CREATE TABLE PROPERTIES (
 );
 
 INSERT INTO properties (application, profile, label, prop_key, prop_value) VALUES
-('configdemo', 'prod', 'main', 'build.id', '101'),
-('configdemo', 'prod', 'main', 'build.version', '1.2.3'),
-('configdemo', 'prod', 'main', 'build.name', 'Database-Production-Build SERVER APPLICATION'),
-('configdemo', 'prod', 'main', 'build.type', 'Database Production Build SERVER APPLICATION');
+('config-server', 'prod', 'main', 'build.id', '101'),
+('config-server', 'prod', 'main', 'build.version', '1.2.3'),
+('config-server', 'prod', 'main', 'build.name', 'Database-Production-Build SERVER APPLICATION'),
+('config-server', 'prod', 'main', 'build.type', 'Database Production Build SERVER APPLICATION');
 
 INSERT INTO properties (application, profile, label, prop_key, prop_value) VALUES
-('configdemo', 'dev', 'main', 'build.id', '101'),
-('configdemo', 'dev', 'main', 'build.version', '1.2.3'),
-('configdemo', 'dev', 'main', 'build.name', 'Database-Development-Build SERVER DB'),
-('configdemo', 'dev', 'main', 'build.type', 'Database Development Build SERVER DB');
+('config-server', 'dev', 'main', 'build.id', '101'),
+('config-server', 'dev', 'main', 'build.version', '1.2.3'),
+('config-server', 'dev', 'main', 'build.name', 'Database-Development-Build SERVER DB'),
+('config-server', 'dev', 'main', 'build.type', 'Database Development Build SERVER DB');
