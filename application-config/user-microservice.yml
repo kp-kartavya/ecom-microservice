@@ -30,4 +30,4 @@ management:
 
 # Testing @RefreshScope
 app:
-  message: This is User Microservice 
+  message: This is User Microservice testing ContextRefresher
