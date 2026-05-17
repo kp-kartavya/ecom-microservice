@@ -1,6 +1,7 @@
 spring:
   application:
     name: product-microservice
-  
+  profiles:
+    active: dev
   config:
     import: optional:configserver:http://localhost:8888

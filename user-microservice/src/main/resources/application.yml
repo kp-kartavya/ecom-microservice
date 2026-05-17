@@ -1,7 +1,9 @@
 spring:
   application:
     name: user-microservice
-
+  profiles:
+    active:
+    - dev
 #  mongodb:
 #    uri: mongodb://localhost:27017/userDB
   config:

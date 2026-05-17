@@ -3,6 +3,7 @@ package com.ecom.user.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +22,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 public class UserController {
 	@Autowired
 	UserService userService;
+
+	@Value("${app.message}")
+	String message;
+
+	@GetMapping("/welcome")
+	public String welcome() {
+		return message;
+	}
 
 	@GetMapping("/getAllUsers")
 	public ResponseEntity<List<UserDto>> getAllUsers() {

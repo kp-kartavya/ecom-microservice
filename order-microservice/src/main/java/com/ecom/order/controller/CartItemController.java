@@ -1,6 +1,7 @@
 package com.ecom.order.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,6 +23,14 @@ public class CartItemController {
 	@Autowired
 	CartItemService cartItemService;
 
+	@Value("${app.message}")
+	String message;
+
+	@GetMapping("/welcome")
+	public String welcome() {
+		return message;
+	}
+	
 	@GetMapping("/getCartItems")
 	public ResponseEntity<?> getCartItems(@RequestHeader("X-User-Id") String userId) {
 		return ResponseEntity.ok(cartItemService.getCartItems(userId));
