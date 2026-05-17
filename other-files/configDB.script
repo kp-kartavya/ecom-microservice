@@ -1,0 +1,56 @@
+-- PostgreSQL Queries: Storing Configurations in DB
+CREATE TABLE PROPERTIES (
+    ID SERIAL PRIMARY KEY,
+    APPLICATION VARCHAR(200),
+    PROFILE VARCHAR(200),
+    LABEL VARCHAR(200),
+    PROP_KEY VARCHAR(200),
+    PROP_VALUE VARCHAR(1000),
+    CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UPDATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO properties (application, profile, label, prop_key, prop_value) VALUES
+('user-microservice', 'dev', 'main', 'build.id', '101'),
+('user-microservice', 'dev', 'main', 'build.version', '1.2.3'),
+('user-microservice', 'dev', 'main', 'build.name', 'Database-Production-Build SERVER APPLICATION'),
+('user-microservice', 'dev', 'main', 'build.type', 'Database Production Build SERVER APPLICATION'),
+('user-microservice', 'dev', 'main', 'spring.application.name', 'user-microservice'),
+('user-microservice', 'dev', 'main', 'server.port', '8080'),
+('user-microservice', 'dev', 'main', 'spring.mongodb.uri', 'mongodb://localhost:27020/userDB'),
+('user-microservice', 'dev', 'main', 'logging.pattern.console', ' ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}'),
+('user-microservice', 'dev', 'main', 'springdoc.api-docs.enabled', 'true'),
+('user-microservice', 'dev', 'main', 'springdoc.api-docs.version', 'openapi-3-0'),
+('user-microservice', 'dev', 'main', 'springdoc.swagger-ui.enabled', 'true'),
+('user-microservice', 'dev', 'main', 'management.endpoints.web.exposure.include', 'refresh'),
+('user-microservice', 'dev', 'main', 'app.message', 'This is message from User Microservice in DB ');
+
+INSERT INTO properties (application, profile, label, prop_key, prop_value) VALUES
+('order-microservice', 'dev', 'main', 'build.id', '101'),
+('order-microservice', 'dev', 'main', 'build.version', '1.2.3'),
+('order-microservice', 'dev', 'main', 'build.name', 'Database-Production-Build SERVER APPLICATION'),
+('order-microservice', 'dev', 'main', 'build.type', 'Database Production Build SERVER APPLICATION'),
+('order-microservice', 'dev', 'main', 'spring.application.name', 'order-microservice'),
+('order-microservice', 'dev', 'main', 'server.port', '8082'),
+('order-microservice', 'dev', 'main', 'spring.mongodb.uri', 'mongodb://localhost:27020/orderDB'),
+('order-microservice', 'dev', 'main', 'logging.pattern.console', ' ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}'),
+('order-microservice', 'dev', 'main', 'springdoc.api-docs.enabled', 'true'),
+('order-microservice', 'dev', 'main', 'springdoc.api-docs.version', 'openapi-3-0'),
+('order-microservice', 'dev', 'main', 'springdoc.swagger-ui.enabled', 'true'),
+('order-microservice', 'dev', 'main', 'management.endpoints.web.exposure.include', 'refresh'),
+('order-microservice', 'dev', 'main', 'app.message', 'This is message from order Microservice in DB ');
+
+INSERT INTO properties (application, profile, label, prop_key, prop_value) VALUES
+('product-microservice', 'dev', 'main', 'build.id', '101'),
+('product-microservice', 'dev', 'main', 'build.version', '1.2.3'),
+('product-microservice', 'dev', 'main', 'build.name', 'Database-Production-Build SERVER APPLICATION'),
+('product-microservice', 'dev', 'main', 'build.type', 'Database Production Build SERVER APPLICATION'),
+('product-microservice', 'dev', 'main', 'spring.application.name', 'product-microservice'),
+('product-microservice', 'dev', 'main', 'server.port', '8081'),
+('product-microservice', 'dev', 'main', 'spring.mongodb.uri', 'mongodb://localhost:27020/productDB'),
+('product-microservice', 'dev', 'main', 'logging.pattern.console', ' ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}'),
+('product-microservice', 'dev', 'main', 'springdoc.api-docs.enabled', 'true'),
+('product-microservice', 'dev', 'main', 'springdoc.api-docs.version', 'openapi-3-0'),
+('product-microservice', 'dev', 'main', 'springdoc.swagger-ui.enabled', 'true'),
+('product-microservice', 'dev', 'main', 'management.endpoints.web.exposure.include', 'refresh'),
+('product-microservice', 'dev', 'main', 'app.message', 'This is message from product Microservice in DB ');
