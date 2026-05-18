@@ -29,3 +29,32 @@ What the above commands respectively:
 
 Other than this previously I used PostgreSQL & pgadmin4. You can use docker compose up.
 other-files has some useful files like sql scripts etc.
+
+Using keytool.exe to encrypt configurations.
+- open cmd write keytool.exe -genkeypair -alias config-server-key -keyalg RSA -dname "CN=Config Server, OU=Spring Cloud, O=Company" -keypass root123 -keystore config-server.jks -storepass root123
+- the above command will create a config-server.jks file. paste it in resources folder.
+- now in app.yml add the below
+- encrypt:
+    key-store:
+      location: config-server.jks
+      password: root123
+      alias: config-server-key
+- in postman POST localhost:8888/encrypt, content-type: text/plain, in body select raw and write what you want to encrypt and send.
+- you'll get an encrypted text. keep it in config as {cipher}encrypted_text
+
+# RABBIT MQ - Update configurations without refreshing
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4-management
+- There are 2 different ports here as RabbitMQ exposes two different services.
+  - Used by applications/services. Your Spring Boot microservices connect here: amqp://localhost:5672
+  - Spring Boot uses this internally. This is the actual RabbitMQ broker port for:
+    - producers
+    - consumers
+    - queues
+    - exchanges
+  - http://localhost:15672 Used in browser
+    - This gives dashboard for:
+      - queues
+      - exchanges
+      - messages
+      - connections
+      - monitoring
